@@ -7,6 +7,7 @@ var firebaseConfig = {
   appId: '1:922973499349:web:75fedc4d9d7130ead7975c',
   measurementId: 'G-VMWWNZRN5Z',
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -16,7 +17,7 @@ $('#signup-form').submit(function (e) {
   // get the username(email) and password from the form
   // change the following code
   var email = $('[name="username"]').val();
-  var password = $('[name="username"]').val();
+  var password = $('[name="password"]').val();
 
   //console.log($('[name="username"]').val());
   //console.log($('[name="password"]').val());
@@ -28,6 +29,8 @@ $('#signup-form').submit(function (e) {
     .then((user) => {
       // Signed in
       // ...
+      console.log('email: ' + email);
+      console.log('pass: ' + password);
 
       console.log('You are signed up');
       window.location.href = 'Login.html';
@@ -39,3 +42,5 @@ $('#signup-form').submit(function (e) {
       console.log(errorMessage);
     });
 });
+
+

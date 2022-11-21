@@ -5,6 +5,7 @@
   	<!-- Jquery library   ---->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+		import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 	</script>
 </head>
 
@@ -23,6 +24,7 @@
 					<p class="center">
 						<input type="submit" value="Submit" />
 						<input type="reset" value="Reset" />
+						<input type="button" value="Sign in with google" id="google">
         </p>
 		</form>
 	</div>
