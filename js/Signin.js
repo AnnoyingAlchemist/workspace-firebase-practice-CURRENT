@@ -46,8 +46,8 @@ $('#Login').submit(function (e) {
     });
 });
 
-$('google').click(function () {
-  const provider = new firebase.auth().GoogleAuthProvider();
+$('#google').click(function () {
+  const provider = new firebase.auth.GoogleAuthProvider();
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -62,7 +62,6 @@ $('google').click(function () {
 
 /*
 $('google').click(function () {
-  const provider = new firebase.auth().GoogleAuthProvider();
   const auth = getAuth();
   firebase.auth().signInWithPopup(provider);
   signInWithPopup(auth, provider)
