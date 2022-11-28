@@ -50,7 +50,7 @@ firebase
     console.log(querySnapshot.size);
     querySnapshot.forEach((doc) => {
       console.log(doc.data().reservation);
-/*
+      /*
       console.log(doc.data().name);
       console.log(doc.data().checkin);
       console.log(doc.data().checkout);
@@ -59,3 +59,17 @@ firebase
 */
     });
   });
+
+//signing out
+$('#signout').click(function () {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      //Sign-out worked
+      window.location.href = 'index.html';
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+});

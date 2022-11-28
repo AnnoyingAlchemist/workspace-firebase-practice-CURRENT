@@ -15,6 +15,15 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('We have a user logged in: ' + user.email);
+  } else {
+    console.log('No user logged in');
+    window.location.href = 'index.html';
+  }
+});
+
 // save the data
 $(".sampleSurvey input[type='submit']").click(function (e) {
   e.preventDefault();
@@ -75,9 +84,9 @@ firebase
           break;
       }
     });
-    console.log('n1 =' + n1);
-    console.log('n2 =' + n2);
-    console.log('n3 =' + n3);
-    console.log('n4 =' + n4);
-    console.log('n5 =' + n5);
+    //console.log('n1 =' + n1);
+    //console.log('n2 =' + n2);
+    //console.log('n3 =' + n3);
+    //console.log('n4 =' + n4);
+    //console.log('n5 =' + n5);
   });
